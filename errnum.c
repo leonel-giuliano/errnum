@@ -20,7 +20,59 @@ int errnum(err_t e, ...) {
 
     switch (e) {
         case ERR_ARG:
-            fprintf(stderr, "usage: %s", va_arg(arg, const char *));
+            fprintf(stderr, "Usage: %s", va_arg(arg, const char *));
+            break;
+
+        case ERR_ALLOC:
+            fprintf(stderr, "There was a problem with the memory while running the code");
+            break;
+
+        // FILES
+        case ERR_FOPEN:
+            fprintf(stderr, "Couldn't access the file '%s'", va_arg(arg, const char *));
+            break;
+
+        case ERR_FCLOSE:
+            fprintf(stderr, "Couldn't close the file '%s'", va_arg(arg, const char *));
+            break;
+
+        // SOCKETS
+        case ERR_NEW_SCK:
+            fprintf(stderr, "Couldn't create a communication line (socket)");
+            break;
+
+        case ERR_CLOSE_SCK:
+            fprintf(stderr, "Couldn't finish the communication line (socket)");
+            break;
+
+        case ERR_INET_PTON:
+            fprintf(
+                stderr,
+                "Couldn't convert the address '%s' into a network address",
+                va_arg(arg, const char *)
+            );
+
+            break;
+
+        case ERR_CONN:
+            fprintf(stderr, "Couldn't connect to the server");
+            break;
+
+        case ERR_BIND:
+            fprintf(
+                stderr,
+                "Couldn't assign the address '%s' to the communication line (socket)",
+                va_arg(arg, const char *)
+            );
+
+            break;
+
+        case ERR_LISTEN:
+            fprintf(stderr, "Couldn't listen for incoming connections");
+            break;
+
+        case ERR_ACCEPT_CONN:
+            fprintf(stderr, "Couldn't accept incoming connections");
             break;
     }
 

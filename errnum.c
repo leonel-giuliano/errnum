@@ -74,6 +74,15 @@ int errnum(err_t e, ...) {
         case ERR_ACCEPT_CONN:
             fprintf(stderr, "Couldn't accept incoming connections");
             break;
+
+        // DATA
+        case ERR_READ:
+            fprintf(stderr, "Problem while reading the data");
+            break;
+
+        case ERR_WRT:
+            fprintf(stderr, "Problem while writting the data");
+            break;
     }
 
     if(errno_val > 0) fprintf(stderr, "%s (Errno::%d)", strerror(errno_val), errno_val);

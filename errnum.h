@@ -18,7 +18,11 @@ enum {
     ERR_CONN,
     ERR_BIND,
     ERR_LISTEN,
-    ERR_ACCEPT_CONN
+    ERR_ACCEPT_CONN,
+
+    // DATA
+    ERR_READ,
+    ERR_WRT
 };
 
 

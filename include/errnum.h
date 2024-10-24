@@ -26,7 +26,15 @@ enum {
 };
 
 
+// If this is passed the program name, it would print it when an error occurs
+// If not, is initialized to NULL
 extern char *errnum_program_name;
+
+
+// Prints error msg depending on the event given
+// Some events requiere more args
+// Returns errno or -1 if it wasn't set
+int errnum(err_t _ErrorEvent, ...);
 
 
 #endif

@@ -59,12 +59,7 @@ int errnum(err_t e, ...) {
             break;
 
         case ERR_BIND:
-            fprintf(
-                stderr,
-                "Couldn't assign the address '%s' to the communication line (socket)",
-                va_arg(arg, const char *)
-            );
-
+            fprintf(stderr, "Couldn't assign the address to the communication line (socket)");
             break;
 
         case ERR_LISTEN:
@@ -82,6 +77,15 @@ int errnum(err_t e, ...) {
 
         case ERR_WRT:
             fprintf(stderr, "Problem while writting the data");
+            break;
+
+        // TERMINAL
+        case ERR_TCGET:
+            fprintf(stderr, "Couldn't get the terminal attributes");
+            break;
+
+        case ERR_TCSET:
+            fprintf(stderr, "Couldn't modify the terminal attributes");
             break;
     }
 

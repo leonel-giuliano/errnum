@@ -78,15 +78,6 @@ int errnum(err_t e, ...) {
         case ERR_WRT:
             fprintf(stderr, "Problem while writting the data");
             break;
-
-        // TERMINAL
-        case ERR_TCGET:
-            fprintf(stderr, "Couldn't get the terminal attributes");
-            break;
-
-        case ERR_TCSET:
-            fprintf(stderr, "Couldn't modify the terminal attributes");
-            break;
     }
 
     if(errno_val > 0) fprintf(stderr, "%s (Errno::%d)", strerror(errno_val), errno_val);

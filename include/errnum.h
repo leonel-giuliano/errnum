@@ -22,11 +22,7 @@ enum {
 
     // DATA
     ERR_READ,
-    ERR_WRT,
-
-    // TERMINAL
-    ERR_TCGET,
-    ERR_TCSET
+    ERR_WRT
 };
 
 

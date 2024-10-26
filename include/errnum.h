@@ -22,7 +22,10 @@ enum {
 
     // DATA
     ERR_READ,
-    ERR_WRT
+    ERR_WRT,
+
+    // THREADS
+    ERR_NEW_TH
 };
 
 

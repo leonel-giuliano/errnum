@@ -78,6 +78,11 @@ int errnum(err_t e, ...) {
         case ERR_WRT:
             fprintf(stderr, "Problem while writting the data");
             break;
+
+        // THREADS
+        case ERR_NEW_TH:
+            fprintf(stderr, "Couldn't create the thread");
+            break;
     }
 
     if(errno_val > 0) fprintf(stderr, "%s (Errno::%d)", strerror(errno_val), errno_val);

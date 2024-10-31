@@ -19,6 +19,7 @@ enum {
     ERR_BIND,
     ERR_LISTEN,
     ERR_ACCEPT_CONN,
+    ERR_SHUTDOWN_SCK,
 
     // DATA
     ERR_READ,

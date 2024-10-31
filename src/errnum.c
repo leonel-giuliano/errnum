@@ -70,6 +70,10 @@ int errnum(err_t e, ...) {
             fprintf(stderr, "Couldn't accept incoming connections");
             break;
 
+        case ERR_SHUTDOWN_SCK:
+            fprintf(stderr, "Couldn't shutdown the socket");
+            break;
+
         // DATA
         case ERR_READ:
             fprintf(stderr, "Problem while reading the data");

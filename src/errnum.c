@@ -90,7 +90,7 @@ int errnum(err_t e, ...) {
     }
 
     if(errno_val > 0) fprintf(stderr, ": %s (Errno::%d)", strerror(errno_val), errno_val);
-
+    putc('\n', stdout);
 
     va_end(arg);
     return (errno_val) ? errno_val : -1;

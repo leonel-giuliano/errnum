@@ -85,7 +85,7 @@ int errnum(err_t e, ...) {
             break;
     }
 
-    if(errno_val > 0) fprintf(stderr, "%s (Errno::%d)", strerror(errno_val), errno_val);
+    if(errno_val > 0) fprintf(stderr, ": %s (Errno::%d)", strerror(errno_val), errno_val);
 
 
     va_end(arg);

@@ -2,7 +2,8 @@
 #define __LIBERRNUM_H__
 
 
-typedef unsigned char err_t;
+typedef int err_t;
+
 enum {
     ERR_ARG = 1,
     ERR_ALLOC,
@@ -37,8 +38,8 @@ extern char *errnum_program_name;
 
 
 // Prints error msg (some events requiere another argument)
-// Returns errno or -1 if it wasn't set
-int errnum(err_t _ErrorEvent, ...);
+// Returns the error event
+err_t errnum(err_t _ErrorEvent, ...);
 
 
 #endif

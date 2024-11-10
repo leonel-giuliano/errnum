@@ -9,7 +9,7 @@
 char *errnum_program_name = NULL;
 
 
-int errnum(err_t e, ...) {
+err_t errnum(err_t e, ...) {
     int errno_val = errno;
 
     va_list arg;
@@ -88,11 +88,14 @@ int errnum(err_t e, ...) {
         case ERR_NEW_TH:
             fprintf(stderr, "Couldn't create the thread");
             break;
+
+        default:
+            fprintf(stderr, "[liberrnum] Bad usage of the library");
     }
 
     if(errno_val > 0) fprintf(stderr, ": %s (Errno::%d)", strerror(errno_val), errno_val);
     putc('\n', stdout);
 
     va_end(arg);
-    return (errno_val) ? errno_val : -1;
+    return e;
 }

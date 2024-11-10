@@ -16,8 +16,7 @@ err_t errnum(err_t e, ...) {
     va_start(arg, e);
 
 
-    if(errnum_program_name != NULL) fprintf(stderr, "%s ", errnum_program_name);
-    fprintf(stderr, "(%s:%d): ", __FILE__, __LINE__);
+    if(errnum_program_name != NULL) fprintf(stderr, "%s: ", errnum_program_name);
 
     switch (e) {
         case ERR_ARG:
